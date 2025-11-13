@@ -84,7 +84,13 @@ Follow the MCP install [guide](https://modelcontextprotocol.io/quickstart/user),
 <details>
 <summary>Codex</summary>
 
-Create or edit the configuration file `~/.codex/config.toml` and add:
+Use the Codex CLI to add the Playwright MCP server:
+
+```bash
+codex mcp add playwright npx "@playwright/mcp@latest"
+```
+
+Alternatively, create or edit the configuration file `~/.codex/config.toml` and add:
 
 ```toml
 [mcp_servers.playwright]
@@ -106,6 +112,21 @@ For more information, see the [Codex MCP documentation](https://github.com/opena
 #### Or install manually:
 
 Go to `Cursor Settings` -> `MCP` -> `Add new MCP Server`. Name to your liking, use `command` type with the command `npx @playwright/mcp@latest`. You can also verify config or add command like arguments via clicking `Edit`.
+
+</details>
+
+<details>
+<summary>Factory</summary>
+
+Use the Factory CLI to add the Playwright MCP server:
+
+```bash
+droid mcp add playwright "npx @playwright/mcp@latest"
+```
+
+Alternatively, type `/mcp` within Factory droid to open an interactive UI for managing MCP servers.
+
+For more information, see the [Factory MCP documentation](https://docs.factory.ai/cli/configuration/mcp).
 
 </details>
 
