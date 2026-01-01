@@ -70,6 +70,11 @@ export type Config = {
     remoteEndpoint?: string;
 
     /**
+     * Paths to TypeScript files to add as initialization scripts for Playwright page.
+     */
+    initPage?: string[];
+
+    /**
      * Paths to JavaScript files to add as initialization scripts.
      * The scripts will be evaluated in every page before any of the page's scripts.
      */
@@ -137,6 +142,13 @@ export type Config = {
    */
   outputDir?: string;
 
+  console?: {
+    /**
+     * The level of console messages to return. Each level includes the messages of more severe levels. Defaults to "info".
+     */
+    level?: 'error' | 'warning' | 'info' | 'debug';
+  },
+
   network?: {
     /**
      * List of origins to allow the browser to request. Default is to allow all. Origins matching both `allowedOrigins` and `blockedOrigins` will be blocked.
@@ -170,5 +182,11 @@ export type Config = {
    * Whether to send image responses to the client. Can be "allow", "omit", or "auto". Defaults to "auto", which sends images if the client can display them.
    */
   imageResponses?: 'allow' | 'omit';
-};
 
+  snapshot?: {
+    /**
+     * When taking snapshots for responses, specifies the mode to use.
+     */
+    mode?: 'incremental' | 'full' | 'none';
+  }
+};
