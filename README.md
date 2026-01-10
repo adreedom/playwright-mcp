@@ -82,6 +82,34 @@ Follow the MCP install [guide](https://modelcontextprotocol.io/quickstart/user),
 </details>
 
 <details>
+<summary>Cline</summary>
+
+Follow the instruction in the section [Configuring MCP Servers](https://docs.cline.bot/mcp/configuring-mcp-servers)
+
+**Example: Local Setup**
+
+Add the following to your [`cline_mcp_settings.json`](https://docs.cline.bot/mcp/configuring-mcp-servers#editing-mcp-settings-files) file:
+
+```json
+{
+  "mcpServers": {
+    "playwright": {
+      "type": "stdio",
+      "command": "npx",
+      "timeout": 30,
+      "args": [
+        "-y",
+        "@playwright/mcp@latest"
+      ],
+      "disabled": false
+    }
+  }
+}
+```
+
+</details>
+
+<details>
 <summary>Codex</summary>
 
 Use the Codex CLI to add the Playwright MCP server:
